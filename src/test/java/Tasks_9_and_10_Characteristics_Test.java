@@ -1,7 +1,7 @@
 import org.testng.annotations.Test;
 import pages.LoginPage;
 
-public class Tasks_7_and_8_Characteristics_Test extends SeleniumBaseTest {
+public class Tasks_9_and_10_Characteristics_Test extends SeleniumBaseTest {
     @Test
     public void addCharacteristic() {
         String processName = "DEMO PROJECT";
