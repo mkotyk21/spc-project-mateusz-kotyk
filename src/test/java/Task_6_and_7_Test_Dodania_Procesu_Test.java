@@ -2,17 +2,20 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import java.util.UUID;
 
-public class Task_6_Test_Dodania_Procesu_Test extends SeleniumBaseTest{
+public class Task_6_and_7_Test_Dodania_Procesu_Test extends SeleniumBaseTest{
     @Test
     public void addNewProcess(){
-        String name= UUID.randomUUID().toString().substring(0,10);
-        String description= UUID.randomUUID().toString().substring(0,10);
-        String notes= UUID.randomUUID().toString().substring(0,15);
+
+        String name= faker.company().buzzword();
+        String description= faker.company().profession();
+        String notes= faker.company().industry();
         new LoginPage(driver)
                 .submitCorrectLogin(config.getApplicationUser(),config.getApplicationPassword())
                 .goToProcesses()
                 .addNewProcess()
                 .addingProcess(name,description,notes)
-                .assertProcessAdded(name,description,notes);
+                .assertProcessAdded(name,description,notes)
+                .goToDashboard()
+                .assertNameProcessDisplayed(name);
     }
 }
