@@ -9,6 +9,7 @@ import java.time.Duration;
 
 public class SeleniumBaseTest {
     protected WebDriver driver;
+    protected Config config;
 
     @BeforeMethod
     public void baseBeforeMethod(){
@@ -16,9 +17,10 @@ public class SeleniumBaseTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
+        config = new Config();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
-        driver.get(new Config().getApplicationUrl());
+        driver.get(config.getApplicationUrl());
     }
     @AfterMethod
     public void baseAfterMethod(){
