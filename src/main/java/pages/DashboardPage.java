@@ -16,7 +16,7 @@ public class DashboardPage extends HomePage{
 
     String GENERIC_DASHBOARD_NAME="//h2[text()='%s']";
 
-    public DashboardPage assertNameProcessDisplayed(String name){
+    public DashboardPage assertNameProcessIsDisplayed(String name){
         String dashbordNameXpath= driver.findElement(By.xpath(String.format(GENERIC_DASHBOARD_NAME,name))).getText();
         Assert.assertEquals(dashbordNameXpath,name);
         return this;
