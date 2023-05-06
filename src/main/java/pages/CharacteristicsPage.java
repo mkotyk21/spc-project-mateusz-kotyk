@@ -1,4 +1,5 @@
 package pages;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,15 +18,16 @@ public class CharacteristicsPage extends HomePage {
     private String GENERIC_CHARACTERISTIC_ROW_XPATH = "//td[text()='%s']/..";
 
 
+    public CreateCharacteristicsPage goToCreateNewCharacteristics() {
+        addBtn.click();
+        return new CreateCharacteristicsPage(driver);
+    }
+
     public CharacteristicsPage expectedCharacteristicsUrl(String url) {
         Assert.assertEquals(driver.getCurrentUrl(), url);
         return this;
     }
 
-    public CreateCharacteristicsPage goToCreateNewCharacteristics() {
-        addBtn.click();
-        return new CreateCharacteristicsPage(driver);
-    }
     public CharacteristicsPage assertCharacteristic(String expName, String expLsl, String expUsl, String expBinCount) {
         String characteristicXpath = String.format(GENERIC_CHARACTERISTIC_ROW_XPATH, expName);
         WebElement characteristicRow = driver.findElement(By.xpath(characteristicXpath));

@@ -1,12 +1,11 @@
 import org.testng.annotations.Test;
 import pages.LoginPage;
 
-
 public class Tasks_7_and_8_Characteristics_Test extends SeleniumBaseTest {
     @Test
     public void addCharacteristic() {
         String processName = "DEMO PROJECT";
-        String characteristicName = faker.ancient().god();
+        String characteristicName = faker.ancient().god()+faker.name().bloodGroup();
         String lsl = "2";
         String usl = "20";
         String charBinCount = "10";
@@ -18,6 +17,7 @@ public class Tasks_7_and_8_Characteristics_Test extends SeleniumBaseTest {
                 .selectProcess(processName)
                 .addNewCharacteristics(characteristicName, lsl, usl, charBinCount)
                 .assertCharacteristic(characteristicName, lsl, usl, charBinCount)
-                .goToDashboard();
+                .goToDashboard()
+                .assertCharacteristicNameIsDisplayed(characteristicName);
     }
 }

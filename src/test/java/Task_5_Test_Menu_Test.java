@@ -1,4 +1,3 @@
-import config.Config;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 

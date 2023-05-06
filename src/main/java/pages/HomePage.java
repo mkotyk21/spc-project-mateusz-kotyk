@@ -30,10 +30,10 @@ public class HomePage {
     @FindBy(css = "a[href$=Characteristics]")
     private WebElement characteristicsMenu;
 
-    @FindBy (css=".menu-home")
+    @FindBy(css = ".menu-home")
     private WebElement menuNav;
 
-    @FindBy (xpath = "//a[contains(text(),'Dashboard')]")
+    @FindBy(xpath = "//a[contains(text(),'Dashboard')]")
     private WebElement dashboardMenu;
 
     private boolean isParentExpanded(WebElement menuLink) {
@@ -52,7 +52,7 @@ public class HomePage {
     }
 
     public DashboardPage goToDashboard() {
-        if (!isParentExpanded(menuNav)){
+        if (!isParentExpanded(menuNav)) {
             menuNav.click();
         }
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -77,7 +77,6 @@ public class HomePage {
         Assert.assertTrue(welcomeText.getText().contains("Welcome"));
         return this;
     }
-
 
 
 }

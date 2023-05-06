@@ -26,7 +26,6 @@ public class SeleniumBaseTest {
 
     @AfterMethod
     public void baseAfterMethod() {
-        //driver.quit();
+        driver.quit();
     }
-
 }

@@ -1,8 +1,7 @@
 import org.testng.annotations.Test;
 import pages.LoginPage;
-import java.util.UUID;
 
-public class Tasks_6_and_7_Test_Dodania_Procesu_Test extends SeleniumBaseTest{
+public class Tasks_6_and_7_Test_Adding_Process_Test extends SeleniumBaseTest{
     @Test
     public void addNewProcess(){
 
